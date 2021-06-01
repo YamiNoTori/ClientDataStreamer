@@ -2,6 +2,6 @@ package Interface;
 
 public interface IFileInputOutput
 {
-    public void Read();
-    public void Write(String str);
+    public IClient[] Read();
+    public void Write(IClient client);
 }

@@ -1,5 +1,6 @@
 package Controller;
-import Model.Client;
+import Interface.IClient;
+import Interface.IFileInputOutput;
 import Model.Engineer;
 import Model.Medic;
 
@@ -7,6 +8,10 @@ import java.lang.Math;
 
 public class ClientController
 {
+
+
+    IFileInputOutput fileStream;
+
     // Тестовые данные
     public String[] names = new String[]{"Dmitriy", "Alex", "Tamara", "Max"};
     public int namesSize = names.length;
@@ -17,6 +22,11 @@ public class ClientController
     public String[] city = new String[]{"Moscow", "New York", "Kioto", "Almatы", "Paris", "London"};
     public int citySize = city.length;
 
+
+    public ClientController()
+    {
+        fileStream = new InputOutputInFile();
+    }
 
     public String[] getRandomClient()
     {
@@ -29,6 +39,16 @@ public class ClientController
         int age = (int)(Math.random() * ((90 - 18)) + 18);
         String resultAge = Integer.toString(age);
         return new String[] {name, second, resultAge, _city};
+    }
+
+
+    public IClient[] getClients ()
+    {
+        return fileStream.Read();
+    }
+    public void setClient(IClient client)
+    {
+        fileStream.Write(client);
     }
 
     public Medic getMedic()

@@ -2,5 +2,10 @@ package Interface;
 
 public interface IClient
 {
-    public String Say();
+    String getFirstName();
+    String getSecondName();
+    int getAge();
+    String getCityName();
+
+    String Say();
 }
