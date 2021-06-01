@@ -30,6 +30,7 @@ public class ClientController
         String resultAge = Integer.toString(age);
         return new String[] {name, second, resultAge, _city};
     }
+
     public Medic getMedic()
     {
         String[] str = getRandomClient();
