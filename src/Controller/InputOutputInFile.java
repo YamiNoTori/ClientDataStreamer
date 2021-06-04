@@ -66,7 +66,8 @@ public class InputOutputInFile implements IFileInputOutput
     public void Write(IClient client)
     {
 
-        try(FileWriter writer = new FileWriter(PATH_OF_DATA + client.getFirstName()+".txt",
+        try(FileWriter writer = new FileWriter(PATH_OF_DATA + "\\" +
+                client.getFirstName()+".txt",
                 false))
         {
             writer.write(client.getFirstName()+"\n");
